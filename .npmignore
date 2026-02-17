@@ -1,9 +1,11 @@
-*.pyc
-__pycache__/
+**/*.pyc
+**/__pycache__/
 .pytest_cache/
 .ruff_cache/
 .*.swp
 .DS_Store
 .git/
+node_modules/
 npm-debug.log
 yarn-error.log
+eslint.config.js

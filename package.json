@@ -25,7 +25,8 @@
   "scripts": {
     "postinstall": "node scripts/install-python-deps.js",
     "start": "node bin/pdf2docx-mcp.js",
-    "dev": "node bin/pdf2docx-mcp.js"
+    "dev": "node bin/pdf2docx-mcp.js",
+    "test": "echo \"No tests configured\""
   },
   "engines": {
     "node": ">=18.0.0"

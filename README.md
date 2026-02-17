@@ -1,74 +1,46 @@
-# pdf2docx MCP Server
+# pdf2docx-mcp
 
-A [Model Context Protocol](https://modelcontextprotocol.io) server that converts PDF documents to editable DOCX format.
+[![npm version](https://img.shields.io/npm/v/@youhaozhao/pdf2docx-mcp)](https://www.npmjs.com/package/@youhaozhao/pdf2docx-mcp)
 
-## Installation
+通过 MCP 协议将 PDF 文件转换为可编辑 DOCX 格式的工具，适用于 Claude Desktop。
 
-```bash
-npm install -g @youhaozhao/pdf2docx-mcp
-```
+## 使用方法
 
-## Usage
+在 Claude Desktop / Claude Code 配置文件中添加：
 
-### As an MCP Server
-
-Add to your Claude Desktop configuration (`claude_desktop_config.json`):
-
-```json
-{
-  "mcpServers": {
-    "pdf2docx": {
-      "command": "pdf2docx-mcp"
-    }
-  }
-}
-```
-
-Or with npx:
+**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+**Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 
 ```json
 {
   "mcpServers": {
     "pdf2docx": {
       "command": "npx",
-      "args": ["@youhaozhao/pdf2docx-mcp"]
+      "args": ["-y", "@youhaozhao/pdf2docx-mcp"]
     }
   }
 }
 ```
 
-### Available Tools
+重启 Claude Desktop 后即可使用。
 
-#### `convert`
+## 可用工具
 
-Convert a PDF file to DOCX format.
+- **`convert`** — 将 PDF 转换为 DOCX，参数：PDF 路径（必填）、输出路径（可选）、页码范围（可选）、密码（可选）
+- **`get_info`** — 获取 PDF 元信息，参数：PDF 路径（必填）
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `pdf_path` | string | Yes | Absolute path to input PDF |
-| `output_path` | string | No | Output path (default: same as input with .docx) |
-| `pages` | string | No | Pages to convert: "0,1,2" or "0-5" |
-| `password` | string | No | Password for encrypted PDFs |
+示例对话：
 
-**Returns:** Conversion result with output path and file size
+```
+把 /Users/me/report.pdf 转换成 DOCX
+获取 /Users/me/report.pdf 的页数和元信息
+```
 
-#### `get_info`
+## 系统要求
 
-Get metadata about a PDF file.
+- Node.js 18+
+- Python 3.10+（Python 依赖会自动安装）
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `pdf_path` | string | Yes | Absolute path to PDF |
+## Credits
 
-**Returns:** Page count, file size, encryption status, and metadata
-
-## Requirements
-
-- Node.js >= 18.0.0
-- Python >= 3.10
-
-Python dependencies are automatically installed during `npm install`.
-
-## License
-
-MIT
+基于 [dothinking/pdf2docx](https://github.com/dothinking/pdf2docx) 构建。
