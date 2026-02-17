@@ -9,6 +9,7 @@
 在 Claude Desktop / Claude Code 配置文件中添加：
 
 **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+
 **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 
 ```json
