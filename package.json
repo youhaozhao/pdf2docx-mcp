@@ -1,0 +1,50 @@
+{
+  "name": "@youhaozhao/pdf2docx-mcp",
+  "version": "0.1.0",
+  "description": "MCP Server for converting PDF documents to editable DOCX format",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "pdf",
+    "docx",
+    "pdf2docx",
+    "document-conversion"
+  ],
+  "homepage": "https://github.com/youhaozhao/pdf2docx-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youhaozhao/pdf2docx-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/youhaozhao/pdf2docx-mcp/issues"
+  },
+  "license": "MIT",
+  "bin": {
+    "pdf2docx-mcp": "bin/pdf2docx-mcp.js"
+  },
+  "scripts": {
+    "postinstall": "node scripts/install-python-deps.js",
+    "start": "node bin/pdf2docx-mcp.js",
+    "dev": "node bin/pdf2docx-mcp.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "files": [
+    "bin/",
+    "python/",
+    "scripts/",
+    "README.md",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.0",
+    "globals": "^17.3.0"
+  }
+}

@@ -1,0 +1,9 @@
+*.pyc
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.*.swp
+.DS_Store
+.git/
+npm-debug.log
+yarn-error.log
